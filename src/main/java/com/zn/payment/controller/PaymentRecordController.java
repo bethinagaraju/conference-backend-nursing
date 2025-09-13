@@ -33,7 +33,7 @@ import com.zn.payment.renewable.service.RenewablePaymentRecordService;
  */
 @RestController
 @RequestMapping("/api/payments")
-@PreAuthorize("hasRole('ADMIN')") // Require ADMIN role for all endpoints in this controller
+// @PreAuthorize("hasRole('ADMIN')") // Require ADMIN role for all endpoints in this controller
 public class PaymentRecordController {
     
     private static final Logger logger = LoggerFactory.getLogger(PaymentRecordController.class);
@@ -75,7 +75,7 @@ public class PaymentRecordController {
 
     // Get payment record by session ID for Optics
     @GetMapping("/session/optics/{sessionId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getOpticsPaymentBySessionId(@PathVariable String sessionId) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving payment record for session: {} for optics", adminUser, sessionId);
@@ -103,7 +103,7 @@ public class PaymentRecordController {
 
     // Get payment record by session ID for Renewable
     @GetMapping("/session/renewable/{sessionId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getRenewablePaymentBySessionId(@PathVariable String sessionId) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving payment record for session: {} for renewable", adminUser, sessionId);
@@ -131,7 +131,7 @@ public class PaymentRecordController {
 
     // Get payment record by session ID for Nursing
     @GetMapping("/session/nursing/{sessionId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getNursingPaymentBySessionId(@PathVariable String sessionId) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving payment record for session: {} for nursing", adminUser, sessionId);
@@ -159,7 +159,7 @@ public class PaymentRecordController {
 
     // Get payment record by session ID for Polymers
     @GetMapping("/session/polymers/{sessionId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getPolymersPaymentBySessionId(@PathVariable String sessionId) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving payment record for session: {} for polymers", adminUser, sessionId);
@@ -186,7 +186,7 @@ public class PaymentRecordController {
     }
         // Get payment record by ID for Optics
     @GetMapping("/optics/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getOpticsPaymentById(@PathVariable Long id) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving optics payment record by ID: {}", adminUser, id);
@@ -214,7 +214,7 @@ public class PaymentRecordController {
 
     // Get payment record by ID for Renewable
     @GetMapping("/renewable/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getRenewablePaymentById(@PathVariable Long id) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving renewable payment record by ID: {}", adminUser, id);
@@ -242,7 +242,7 @@ public class PaymentRecordController {
 
     // Get payment record by ID for Nursing
     @GetMapping("/nursing/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getNursingPaymentById(@PathVariable Long id) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving nursing payment record by ID: {}", adminUser, id);
@@ -270,7 +270,7 @@ public class PaymentRecordController {
 
     // Get payment record by ID for Polymers
     @GetMapping("/polymers/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getPolymersPaymentById(@PathVariable Long id) {
         String adminUser = getCurrentAdminUser();
         logger.info("ADMIN {}: Retrieving polymers payment record by ID: {}", adminUser, id);

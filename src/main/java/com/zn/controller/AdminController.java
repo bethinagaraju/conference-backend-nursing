@@ -108,7 +108,7 @@ public class AdminController {	@Autowired
 
    // Optics session
    @PostMapping("/sessions/optics")
-   @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
    public ResponseEntity<String> insertOpticsSession(@RequestBody SessionOptionDTO dto) {
 		   try {
 				   if (dto == null || dto.getSessionOption() == null || dto.getSessionOption().trim().isEmpty()) {
@@ -123,7 +123,7 @@ public class AdminController {	@Autowired
 
    // Renewable session
    @PostMapping("/sessions/renewable")
-   @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
    public ResponseEntity<String> insertRenewableSession(@RequestBody SessionOptionDTO dto) {
 		   try {
 				   if (dto == null || dto.getSessionOption() == null || dto.getSessionOption().trim().isEmpty()) {
@@ -138,7 +138,7 @@ public class AdminController {	@Autowired
 
    // Nursing session
    @PostMapping("/sessions/nursing")
-   @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
    public ResponseEntity<String> insertNursingSession(@RequestBody SessionOptionDTO dto) {
 		   try {
 				   if (dto == null || dto.getSessionOption() == null || dto.getSessionOption().trim().isEmpty()) {
@@ -153,7 +153,7 @@ public class AdminController {	@Autowired
 
    // Polymers session
    @PostMapping("/sessions/polymers")
-   @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
    public ResponseEntity<String> insertPolymersSession(@RequestBody SessionOptionDTO dto) {
 		   try {
 				   if (dto == null || dto.getSessionOption() == null || dto.getSessionOption().trim().isEmpty()) {
@@ -223,7 +223,7 @@ public class AdminController {	@Autowired
 		// insert acoommodation in Accommodation table
 	// Optics accommodation
 	@PostMapping("/api/admin/accommodation/optics")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<String> insertOpticsAccommodation(@RequestBody com.zn.optics.entity.OpticsAccommodation accommodation) {
 		try {
 			if (accommodation == null) {
@@ -238,7 +238,7 @@ public class AdminController {	@Autowired
 
 	// Renewable accommodation
 	@PostMapping("/api/admin/accommodation/renewable")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<String> insertRenewableAccommodation(@RequestBody com.zn.renewable.entity.RenewableAccommodation accommodation) {
 		try {
 			if (accommodation == null) {
@@ -253,7 +253,7 @@ public class AdminController {	@Autowired
 
 	// Nursing accommodation
 	@PostMapping("/api/admin/accommodation/nursing")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<String> insertNursingAccommodation(@RequestBody com.zn.nursing.entity.NursingAccommodation accommodation) {
 		try {
 			if (accommodation == null) {
@@ -268,7 +268,7 @@ public class AdminController {	@Autowired
 
 	// Polymers accommodation
 	@PostMapping("/api/admin/accommodation/polymers")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<String> insertPolymersAccommodation(@RequestBody com.zn.polymers.entity.PolymersAccommodation accommodation) {
 		try {
 			if (accommodation == null) {
@@ -282,7 +282,7 @@ public class AdminController {	@Autowired
 	}
 	// Optics pricing config
 	@PostMapping("/api/admin/pricing-config/optics")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> insertOpticsPricingConfig(@RequestBody com.zn.optics.entity.OpticsPricingConfig config) {
 		try {
 			adminService.insertOpticsPricingConfig(config);
@@ -295,7 +295,7 @@ public class AdminController {	@Autowired
 
 	// Renewable pricing config
 	@PostMapping("/api/admin/pricing-config/renewable")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> insertRenewablePricingConfig(@RequestBody com.zn.renewable.entity.RenewablePricingConfig config) {
 		try {
 			adminService.insertRenewablePricingConfig(config);
@@ -308,7 +308,7 @@ public class AdminController {	@Autowired
 
 	// Nursing pricing config
 	@PostMapping("/api/admin/pricing-config/nursing")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> insertNursingPricingConfig(@RequestBody com.zn.nursing.entity.NursingPricingConfig config) {
 		try {
 			adminService.insertNursingPricingConfig(config);
@@ -321,7 +321,7 @@ public class AdminController {	@Autowired
 
 	// Polymers pricing config
 	@PostMapping("/api/admin/pricing-config/polymers")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> insertPolymersPricingConfig(@RequestBody com.zn.polymers.entity.PolymersPricingConfig config) {
 		try {
 			adminService.insertPolymersPricingConfig(config);
@@ -410,7 +410,7 @@ public ResponseEntity<?> getPolymersPricingConfigDetails(@PathVariable Long id) 
 
 // get all registration forms for each vertical
 @PostMapping("/api/admin/registration-forms/optics")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllOpticsRegistrationForms() {
 	try {
 		return ResponseEntity.ok(adminService.getAllOpticsRegistrationForms());
@@ -420,7 +420,7 @@ public ResponseEntity<?> getAllOpticsRegistrationForms() {
 }
 
 @PostMapping("/api/admin/registration-forms/renewable")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllRenewableRegistrationForms() {
 	try {
 		return ResponseEntity.ok(adminService.getAllRenewableRegistrationForms());
@@ -430,7 +430,7 @@ public ResponseEntity<?> getAllRenewableRegistrationForms() {
 }
 
 @PostMapping("/api/admin/registration-forms/nursing")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllNursingRegistrationForms() {
 	try {
 		return ResponseEntity.ok(adminService.getAllNursingRegistrationForms());
@@ -440,7 +440,7 @@ public ResponseEntity<?> getAllNursingRegistrationForms() {
 }
 
 @PostMapping("/api/admin/registration-forms/polymers")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllPolymersRegistrationForms() {
 	try {
 		return ResponseEntity.ok(adminService.getAllPolymersRegistrationForms());
@@ -454,7 +454,7 @@ public ResponseEntity<?> getAllPolymersRegistrationForms() {
 // get all abstract form submissions for each vertical
 
 @GetMapping("/api/admin/abstract-submissions/optics")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllOpticsAbstractSubmissions() {
 	try {
 		return ResponseEntity.ok(adminService.getAllOpticsFormSubmissions());
@@ -464,7 +464,7 @@ public ResponseEntity<?> getAllOpticsAbstractSubmissions() {
 }
 
 @GetMapping("/api/admin/abstract-submissions/renewable")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllRenewableAbstractSubmissions() {
 	try {
 		return ResponseEntity.ok(adminService.getAllRenewableFormSubmissions());
@@ -474,7 +474,7 @@ public ResponseEntity<?> getAllRenewableAbstractSubmissions() {
 }
 
 @GetMapping("/api/admin/abstract-submissions/nursing")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllNursingAbstractSubmissions() {
 	try {
 		return ResponseEntity.ok(adminService.getAllNursingFormSubmissions());
@@ -484,7 +484,7 @@ public ResponseEntity<?> getAllNursingAbstractSubmissions() {
 }
 
 @GetMapping("/api/admin/abstract-submissions/polymers")
-@PreAuthorize("hasRole('ADMIN')")
+// @PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	try {
 		return ResponseEntity.ok(adminService.getAllPolymersFormSubmissions());
@@ -516,7 +516,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	 
 	// Get all interested-in options for each vertical (admin)
 	@GetMapping("/api/admin/interested-in/optics")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllOpticsInterestedInOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllOpticsInterestedInOptions());
@@ -527,7 +527,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/interested-in/renewable")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllRenewableInterestedInOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllRenewableInterestedInOptions());
@@ -537,7 +537,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/interested-in/nursing")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllNursingInterestedInOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllNursingInterestedInOptions());
@@ -547,7 +547,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/interested-in/polymers")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllPolymersInterestedInOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllPolymersInterestedInOptions());
@@ -558,7 +558,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 
 	// Get all session options for each vertical (admin)
 	@GetMapping("/api/admin/session-options/optics")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllOpticsSessionOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllOpticsSessionOptions());
@@ -568,7 +568,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/session-options/renewable")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllRenewableSessionOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllRenewableSessionOptions());
@@ -578,7 +578,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/session-options/nursing")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllNursingSessionOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllNursingSessionOptions());
@@ -588,7 +588,7 @@ public ResponseEntity<?> getAllPolymersAbstractSubmissions() {
 	}
 
 	@GetMapping("/api/admin/session-options/polymers")
-	@PreAuthorize("hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> getAllPolymersSessionOptions() {
 		try {
 			return ResponseEntity.ok(adminService.getAllPolymersSessionOptions());

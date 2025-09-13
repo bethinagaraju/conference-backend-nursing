@@ -76,7 +76,7 @@ public class FormSubmission {
 		if (origin != null) {
 			if (origin.contains("globallopmeet.com")) {
 				interestedInOptions = opticsFormSubmissionService.getInterestedInOptions();
-			} else if (origin.contains("nursingmeet2026.com")) {
+			} else if ((origin.contains("nursingmeet2026.com") || origin.contains("localhost"))) {
 				interestedInOptions = nursingFormSubmissionService.getInterestedInOptions();
 			} else if (origin.contains("globalrenewablemeet.com")) {
 				interestedInOptions = renewableFormSubmissionService.getInterestedInOptions();
@@ -116,7 +116,7 @@ public class FormSubmission {
 		return ResponseEntity.ok(sessionOptions);
 	}
 
-	// Get all form submissions for renewable
+	// Get all form submissions for renewable, polymers, optics, and nursing
 	@GetMapping("/get-submissions")
 	public ResponseEntity<?> getFormSubmissions(HttpServletRequest httpRequest) {
 		String origin = httpRequest.getHeader("Origin");
@@ -125,6 +125,15 @@ public class FormSubmission {
 		}
 		if (origin != null && origin.contains("globalrenewablemeet.com")) {
 			List<?> submissions = renewableFormSubmissionService.getAllFormSubmissions();
+			return ResponseEntity.ok(submissions);
+		} else if (origin != null && origin.contains("polyscienceconference.com")) {
+			List<?> submissions = polymersFormSubmissionService.getAllFormSubmissions();
+			return ResponseEntity.ok(submissions);
+		} else if (origin != null && origin.contains("globallopmeet.com")) {
+			List<?> submissions = opticsFormSubmissionService.getAllFormSubmissions();
+			return ResponseEntity.ok(submissions);
+		} else if (origin != null && (origin.contains("nursingmeet2026.com") || origin.contains("localhost"))) {
+			List<?> submissions = nursingFormSubmissionService.getAllFormSubmissions();
 			return ResponseEntity.ok(submissions);
 		} else {
 			return ResponseEntity.badRequest().body("Access denied for this domain");

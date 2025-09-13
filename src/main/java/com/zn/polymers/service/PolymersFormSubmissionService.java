@@ -107,17 +107,25 @@ public class PolymersFormSubmissionService {
     }
 
     public List<?> getSessionOptions() {
-        
-        
+
+
         try {
             return sessionOptionsRepo.findAll();
         } catch (Exception e) {
             e.printStackTrace();
             return null; // or handle the error appropriately
         }
-        
+
     }
-    //Get all form submissions 
+
+    public List<PolymersForm> getAllFormSubmissions() {
+        try {
+            return formSubmissionRepo.findAll();
+        } catch (Exception e) {
+            log.error("Error retrieving all form submissions: ", e);
+            return null;
+        }
+    }
     
     
     

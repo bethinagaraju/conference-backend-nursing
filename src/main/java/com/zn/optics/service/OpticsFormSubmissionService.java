@@ -118,6 +118,15 @@ public class OpticsFormSubmissionService {
         
     }
     //Get all form submissions 
+
+    public List<OpticsForm> getAllFormSubmissions() {
+        try {
+            return formSubmissionRepo.findAll();
+        } catch (Exception e) {
+            log.error("Error retrieving all form submissions: ", e);
+            return null;
+        }
+    }
     
     
     

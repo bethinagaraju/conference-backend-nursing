@@ -69,7 +69,7 @@ public class SpeakersController {
    
    // get all renewable speakers
     @PutMapping("/nursing/edit")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> editNursingSpeaker(@ModelAttribute SpeakerAddRequestDTO speakerAddRequestDTO) {
         log.info("[ENTRY] editNursingSpeaker called with DTO: {}", speakerAddRequestDTO);
         try {
@@ -182,7 +182,7 @@ public class SpeakersController {
     }
 
     @PostMapping("/nursing/add")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> addNursingSpeaker(@ModelAttribute SpeakerAddRequestDTO speakerAddRequestDTO) {
         log.info("[ENTRY] addNursingSpeaker called with DTO: {}", speakerAddRequestDTO);
         try {
@@ -333,7 +333,7 @@ public class SpeakersController {
         return ResponseEntity.ok().build();
     }
     @DeleteMapping("/nursing/delete")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> deleteNursingSpeaker(@RequestBody NursingSpeakers speaker) {
         nursingSpeakersService.deleteSpeaker(speaker);
         return ResponseEntity.ok().build();

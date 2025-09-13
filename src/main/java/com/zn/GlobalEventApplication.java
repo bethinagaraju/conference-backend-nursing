@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @SpringBootApplication
-@EnableMethodSecurity
-@EnableWebSecurity
+// @EnableMethodSecurity
+// @EnableWebSecurity
 public class GlobalEventApplication {
 
 	public static void main(String[] args) {

@@ -117,7 +117,16 @@ public class NursingFormSubmissionService {
         }
         
     }
-    //Get all form submissions 
+    //Get all form submissions
+
+    public List<NursingForm> getAllFormSubmissions() {
+        try {
+            return formSubmissionRepo.findAll();
+        } catch (Exception e) {
+            log.error("Error retrieving all form submissions: ", e);
+            return null;
+        }
+    }
     
     
     
